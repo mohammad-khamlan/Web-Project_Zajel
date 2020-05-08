@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Information Saved</title>
+<link rel="stylesheet" href="css/personal_info_saved.css">
+</head>
+<body>
+    <ul>
+        <li><a class="active" href="/">Marks</a></li>
+        <li><a href="/personal-info">Personal Information</a></li>
+        <li><a href="/personal_info_saved">Personal Information data</a></li>
+      </ul><br>
+
+      <table id="t01">
+        <tr>
+          <th>Name</th>
+          <th>ID Number</th> 
+          <th>Jordanian national number</th>
+          <th>City</th>
+          <th>City / village / camp</th>
+          <th>Street</th>
+        </tr>
+        <tr>
+       
+         <% for(var i = 0; i < info.length; i++){ %>
+          <td><%=info[i].name %></td>
+          <td><%=info[i].Id_Number %></td>
+          <td><%=info[i].Jordan_Nationality_Number %></td>
+          <td><%=info[i].city %></td>
+          <td><%=info[i].city_Village_Camp %></td>
+          <td><%=info[i].Street %></td>
+        </tr>
+        <% } %>
+      </table>
+</body>
+</html>

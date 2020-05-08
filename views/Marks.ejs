@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Marks</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+    rel="stylesheet" 
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+     crossorigin="anonymous">
+   <link rel="stylesheet" href="css/styles.css">
+   
+</head>
+<body>
+
+  <ul>
+    <li><a class="active" href="/">Marks</a></li>
+    <li><a href="/personal-info">Personal Information</a></li>
+    <li><a href="/personal_info_saved">Personal Information data</a></li>
+  </ul>
+  
+    <div class="container">
+    <h2>Marks for third semester</h2><br>
+
+<% for(var i = 0; i < marks.length ; i++){ %>
+<button class="accordion"> <%= marks[i].courseName %> &emsp; &emsp; &emsp;   <%= marks[i].courseMark %> </button>
+<div class="panel">
+  <p> First Exam: <%= marks[i].firstExam %></p> 
+  <p> Second Exam: <%= marks[i].SecondExam %></p> 
+  <p> Midterm Exam: <%= marks[i].midtermExam %></p> 
+  <p>assignments: <%= marks[i].assignments %></p>
+  <p>Final Exam: <%= marks[i].finalExam %></p>
+  <p>course Mark: <%= marks[i].courseMark %></p>
+</div>
+<% } %>
+
+
+<script>
+var acc = document.getElementsByClassName("accordion");
+var i;
+
+for (i = 0; i < acc.length; i++) {
+  acc[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var panel = this.nextElementSibling;
+    if (panel.style.maxHeight) {
+      panel.style.maxHeight = null;
+    } else {
+      panel.style.maxHeight = panel.scrollHeight + "px";
+    } 
+  });
+}
+</script>
+
+</div>
+
+</body>
+</html>
